@@ -3,45 +3,56 @@
     padding: 0;
     box-sizing: border-box;
 }
- 
-body{
-    background-color: blanchedalmond;
-    color: rgb(101, 67, 21);
-}
 
-
-.img-text{
-    display: flex;
+.info{
     width: 100vw;
-    padding-top: 50px;
-    padding-bottom: 15px;
     height: 100vh;
-    border: 1px solid blueviolet;
+    align-items: center;
+    background-color: blanchedalmond;
+
+}
+.img-text{
+    color: rgb(101, 67, 21);
+    display: flex;
+    padding-top: 50px;
+    height: 80vh;
+
 }
 .img-text> img{
-    height: 400px;
-    width: 50%;
+    width: 50vw;
     object-fit: cover;
 }
 .img-text .icon{
     height: 35px;
     width: 35px;
-    margin-left: 180px;
-    margin-top: 420px;
-    
+    margin-left: 10%;
+    margin-top: 35%;
+    animation: slide 3s linear 1s 1 ;
 }
 .img-text .icon:hover{
     transform: rotate(360deg);
     transition: ease-in-out 1s  ;
-    
     width: 40px;
     /* transform: translateX(-500px); */
     cursor: pointer; 
 }
+    
 .img-text .text{
-    margin-left: 80px;
+    padding-left: 50px;
     padding-top: 100px;
     text-align: left;
+    animation: slide 3s linear 1s 1 ;
+
+}
+@keyframes slide{
+    from{
+        opacity: 0;
+        scale: 0.5;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
 }
 .biggest{
     font-size: 70px;
@@ -69,4 +80,32 @@ body{
     font-style: normal;
     font-variation-settings:
       "wdth" 100;
+}
+@media(max-width:800px){
+    .img-text{
+        flex-direction: column;
+        height: 50vh;
+        padding-top: 5vh;
+    }
+    .img-text> img{
+        width: 100vw;
+        height: 40vh;
+    }
+    .img-text .text{
+        padding-top: 50px;
+    }
+    .img-text .icon{
+        margin-top: 5%;
+        margin-left: 80%;
+    }
+}
+@media print{
+    .img-text > img{
+        width: 100vw;
+        height: 55vh;
+    }
+    .img-text .icon{
+        margin-top: 0;
+        margin-left: 80%;
+    }
 }
